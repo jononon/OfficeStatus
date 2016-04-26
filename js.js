@@ -1,6 +1,17 @@
 $(document).ready(function() {
 
+  var currentWeather;
+
+  $.ajax({
+    url: 'http://api.wunderground.com/api/e78d2ccf0a39822b/conditions/q/CA/Studio_City.json',
+    dataType: 'json',
+    success: function(data) {
+      currentWeather=' ' + data.current_observation.temp_f + String.fromCharCode(parseInt('00B0', 16)) + 'F');
+    }
+  });
+
   var myDate = new Date();
+
   if (myDate.getHours() < 12) {
       $('#title').append("Good Morning, ");
   } else if (myDate.getHours() >= 12 && myDate.getHours() <= 17) {
@@ -22,7 +33,7 @@ $(document).ready(function() {
                 months[now.getMonth()]].join(' ');
 
     // set the content of the element with the ID time to the formatted string
-    document.getElementById('time').innerHTML = [date, time].join(', ');
+    document.getElementById('time').innerHTML = [date, time].join(', ')+currentWeather;
 
     // call this function again in 1000ms
     setTimeout(updateClock, 1000);
@@ -30,13 +41,7 @@ $(document).ready(function() {
   updateClock(); // initial call
 
 
-  $.ajax({
-    url: 'http://api.wunderground.com/api/e78d2ccf0a39822b/conditions/q/CA/Studio_City.json',
-    dataType: 'json',
-    success: function(data) {
-      $('#weather').append(' ' + data.current_observation.temp_f + String.fromCharCode(parseInt('00B0', 16)) + 'F');
-    }
-  })
+
 /*
   var key = 'AIzaSyAcmscSUENKMTKPgTTX9982lWLuFn2DqC0';
   $.ajax({
