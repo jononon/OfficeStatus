@@ -10,7 +10,7 @@ $(document).ready(function() {
     "postman-token": "75f6f76d-3f49-6b70-db89-e86ca2cd4207",
     "Access-Control-Allow-Origin": "http://jonathandamico.me"
     }
-  }
+  };
 
   $.ajax(settings).done(function (response) {
       $('#directions_MS').append('Time to Middle School via ' + routes[0].summary + ': ' + routes[0].legs[0].duration.text);
