@@ -5,5 +5,6 @@ $(document).ready(function() {
     dataType: 'jsonp',
     success: function(data) {
       $('#directions_MS').append('Time to Middle School via ' + routes[0].summary + ': ' + routes[0].legs[0].duration.text);
+    }
   });
 });
