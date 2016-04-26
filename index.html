@@ -63,6 +63,28 @@
                     $('#traveltime_DJ_MOM').append('Directions request failed due to ' + status);
                   }
                 });
+                directionsService.route({
+                  origin: HWUS,
+                  destination: DJ_DAD,
+                  travelMode: google.maps.TravelMode.DRIVING
+                }, function(response, status) {
+                  if (status === google.maps.DirectionsStatus.OK) {
+                    $('#traveltime_DJ_DAD').append('To DJ\'s House (Gentry): ' + response.routes[0].legs[0].duration.text);
+                  } else {
+                    $('#traveltime_DJ_DAD').append('Directions request failed due to ' + status);
+                  }
+                });
+                directionsService.route({
+                  origin: HWUS,
+                  destination: JONATHAN,
+                  travelMode: google.maps.TravelMode.DRIVING
+                }, function(response, status) {
+                  if (status === google.maps.DirectionsStatus.OK) {
+                    $('#traveltime_JONATHAN').append('To Jonathan\'s House: ' + response.routes[0].legs[0].duration.text);
+                  } else {
+                    $('#traveltime_JONATHAN').append('Directions request failed due to ' + status);
+                  }
+                });
               }
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcmscSUENKMTKPgTTX9982lWLuFn2DqC0&callback=initMap"
@@ -71,6 +93,8 @@
           <div id=traffic style="width:100%; height:50%; float:right;">
             <div id=traveltime_MS></div>
             <div id=traveltime_DJ_MOM></div>
+            <div id=traveltime_DJ_DAD></div>
+            <div id=traveltime_DJ_JONATHAN></div>
           </div>
         </div>
     </div>
