@@ -30,6 +30,13 @@ $(document).ready(function() {
   updateClock(); // initial call
 
 
+  $.ajax({
+    url: 'http://api.wunderground.com/api/e78d2ccf0a39822b/conditions/q/CA/Studio_City.json',
+    dataType: 'json',
+    success: function(data) {
+      $('#title').append(data.current_observation.temp_f + String.fromCharCode(parseInt(str, 16)) + 'F');
+    }
+  })
 /*
   var key = 'AIzaSyAcmscSUENKMTKPgTTX9982lWLuFn2DqC0';
   $.ajax({
