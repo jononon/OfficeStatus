@@ -8,4 +8,9 @@ iframe {
 
 #title {
   font-size: 3vw;
+  font-weight: bold;
+}
+
+#time {
+  font-size: 2vw;
 }
