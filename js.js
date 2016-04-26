@@ -8,7 +8,7 @@ $(document).ready(function() {
   "headers": {
     "cache-control": "no-cache",
     "postman-token": "75f6f76d-3f49-6b70-db89-e86ca2cd4207",
-    "Access-Control-Allow-Origin": "*"
+    "Access-Control-Allow-Origin": "http://jonathandamico.me"
     }
   }
 
