@@ -10,7 +10,7 @@ $(document).ready(function() {
   } else /* the hour is not between 0 and 24, so something is wrong */ {
       $('#title').append("I'm not sure what time it is!");
   } /* remove the following in your live script. It is for testing */
-  $('#title').append("<br /><br /> The hour is: ") document.write(myDate.getHours());
+  $('#title').append("<br /><br /> The hour is: " + myDate.getHours());
 
 /*
   var key = 'AIzaSyAcmscSUENKMTKPgTTX9982lWLuFn2DqC0';
