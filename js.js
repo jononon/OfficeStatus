@@ -34,7 +34,7 @@ $(document).ready(function() {
     url: 'http://api.wunderground.com/api/e78d2ccf0a39822b/conditions/q/CA/Studio_City.json',
     dataType: 'json',
     success: function(data) {
-      $('#time').append(data.current_observation.temp_f + String.fromCharCode(parseInt('00B0', 16)) + 'F');
+      $('#time').append(' ' + data.current_observation.temp_f + String.fromCharCode(parseInt('00B0', 16)) + 'F');
     }
   })
 /*
