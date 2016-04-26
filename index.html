@@ -35,8 +35,11 @@
                 });
 
                 var directionsService = new google.maps.DirectionsService;
-                var HWUS = {lat: 34.1394903, lng: -118.4150432};
-                var HWMS = {lat: 34.0885966, lng: -118.4356582};
+                var HWUS      = {lat: 34.1394903, lng: -118.4150432};
+                var HWMS      = {lat: 34.0885966, lng: -118.4356582};
+                var DJ_MOM    = {lat: 34.1452844, lng: -118.4401267};
+                var DJ_DAD    = {lat: 34.1694104, lng: -118.3957387};
+                var JONATHAN  = {lat: 34.0481214, lng: -118.5060167};
 
                 directionsService.route({
                   origin: HWUS,
@@ -49,6 +52,17 @@
                     $('#traveltime_MS').append('Directions request failed due to ' + status);
                   }
                 });
+                directionsService.route({
+                  origin: HWUS,
+                  destination: DJ_MOM,
+                  travelMode: google.maps.TravelMode.DRIVING
+                }, function(response, status) {
+                  if (status === google.maps.DirectionsStatus.OK) {
+                    $('#traveltime_DJ_MOM').append('To DJ\'s House (Roblar): ' + response.routes[0].legs[0].duration.text);
+                  } else {
+                    $('#traveltime_DJ_MOM').append('Directions request failed due to ' + status);
+                  }
+                });
               }
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcmscSUENKMTKPgTTX9982lWLuFn2DqC0&callback=initMap"
@@ -56,6 +70,7 @@
           </div>
           <div id=traffic style="width:100%; height:50%; float:right;">
             <div id=traveltime_MS></div>
+            <div id=traveltime_DJ_MOM></div>
           </div>
         </div>
     </div>
