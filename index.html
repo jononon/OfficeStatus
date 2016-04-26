@@ -35,9 +35,14 @@
                 });
 
                 var directionsService = new google.maps.DirectionsService;
+                var HWUS = new google.maps.Place;
+                var HWMS = new google.maps.Place;
+                HWUS.placeId = "place_id:ChIJSydXgVm8woARrlqYCBU_ZRQ";
+                HWMS.placeId = "place_id:ChIJeVT19fK9woAR2y9xeIx-CTo"
+
                 directionsService.route({
-                  origin: "place_id:ChIJSydXgVm8woARrlqYCBU_ZRQ",
-                  destination: "place_id:ChIJeVT19fK9woAR2y9xeIx-CTo",
+                  origin: HWUS,
+                  destination: HWMS,
                   travelMode: google.maps.TravelMode.DRIVING
                 }, function(response, status) {
                   if (status === google.maps.DirectionsStatus.OK) {
