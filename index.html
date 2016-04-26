@@ -44,7 +44,7 @@
                   travelMode: google.maps.TravelMode.DRIVING
                 }, function(response, status) {
                   if (status === google.maps.DirectionsStatus.OK) {
-                    $('#traveltime_MS').append('To Middle School: ' + response[0].routes[0].legs[0].duration.text);
+                    $('#traveltime_MS').append('To Middle School: ' + response.routes[0].legs[0].duration.text);
                   } else {
                     $('#traveltime_MS').append('Directions request failed due to ' + status);
                   }
