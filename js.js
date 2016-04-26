@@ -6,7 +6,7 @@ $(document).ready(function() {
     jsonpCallback: 'callback',
     type: 'GET',
     success: function(data) {
-      $('#directions_MS').append('Time to Middle School via ' + routes[0].summary + ': ' + routes[0].legs[0].duration.text);
+      $('#directions_MS').append('Time to Middle School via ' + data.routes[0].summary + ': ' + data.routes[0].legs[0].duration.text);
     }
   });
 });
