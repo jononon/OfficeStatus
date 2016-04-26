@@ -15,7 +15,7 @@ $(document).ready(function() {
   function updateClock() {
     var now = new Date(), // current date
         months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; // you get the idea
-        time = now.getHours()%12 + ':' + (now.getMinutes()<10?0:'') + now.getMinutes() + ':' + (now.getSeconds()<10?0:'') + now.getSeconds(), // again, you get the idea
+        time = (now.getHours()%12==0)?12:now.getHours()%12 + ':' + (now.getMinutes()<10?0:'') + now.getMinutes() + ':' + (now.getSeconds()<10?0:'') + now.getSeconds(), // again, you get the idea
 
         // a cleaner way than string concatenation
         date = [now.getDate(),
